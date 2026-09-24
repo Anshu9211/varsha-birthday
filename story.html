@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From Classmates to BABU — Anshu &amp; Varsha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="transition-overlay"><span class="glow-heart">❤</span></div>
+
+<main class="page-wrap" id="page2">
+
+  <p class="eyebrow">CHAPTER TWO</p>
+  <h1 class="page-title">FROM CLASSMATES TO<br> Friend to BABU ❤️</h1>
+
+  <p class="body-text" id="typeOne" style="min-height:3.4em;"></p>
+
+  <p class="body-text" id="typeTwo" style="min-height:9.5em; margin-top:0.4rem;"></p>
+
+  <div class="timeline" id="timeline">
+    <div class="t-item" data-emoji="🎓">
+      <h3>First Meeting</h3>
+      <p>Govt. Degree College, Solan — B.Sc stream. Two names on a class list, not knowing they'd become this.</p>
+    </div>
+    <div class="t-item" data-emoji="🧠">
+  <h3>First Viva</h3>
+  <p>Our first viva question — Newton's Laws. 😭</p>
+</div>
+
+<div class="t-item" data-emoji="🥟">
+  <h3>Shimla Meetings</h3>
+  <p>Every Shimla meeting somehow ends with momos. 😂</p>
+</div>
+
+<div class="t-item" data-emoji="🛡️">
+  <h3>Always Protective</h3>
+  <p>Always protecting me from every other girl. 😂❤️</p>
+</div>
+
+<div class="t-item" data-emoji="❤️">
+  <h3>BABU</h3>
+  <p>One little name, so many memories. ❤️</p>
+</div>
+  </div>
+
+  <p class="lead-line" style="margin-top:1.6rem;">
+    Some people enter your life...<br>and somehow become a part of your story forever.
+  </p>
+
+  <a href="memories.html" data-nav class="btn-glow">CONTINUE OUR STORY →</a>
+
+</main>
+
+<nav class="page-nav">
+  <a href="index.html" data-nav aria-label="Page 1"></a>
+  <a href="story.html" data-nav class="active" aria-label="Page 2"></a>
+  <a href="memories.html" data-nav aria-label="Page 3"></a>
+  <a href="birthday.html" data-nav aria-label="Page 4"></a>
+</nav>
+
+<script src="js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    typeSequence(document.getElementById('typeOne'), [
+      'At first...',
+      'you were just another person in B.Sc, Govt. Degree College Solan.'
+    ], { onDone: () => {
+      typeSequence(document.getElementById('typeTwo'), [
+        'But slowly...',
+        'random conversations became daily conversations.',
+        'Classmates became friends.',
+        'Friends became close.',
+        'And somehow... you became my BABU.'
+      ], { speed: 26 });
+    }});
+
+    initScrollReveal('.t-item');
+    initTimelineDraw();
+  });
+</script>
+</body>
+</html>
