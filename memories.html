@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>College Memories — Anshu &amp; Varsha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="transition-overlay"><span class="glow-heart">❤</span></div>
+
+<main class="page-wrap" id="page3">
+
+  <p class="eyebrow">CHAPTER THREE</p>
+  <h1 class="page-title">OUR MEMORIES 📸</h1>
+  <p class="placeholder-tag" style="margin-top:0.4rem;">College ended. Memories didn't. ❤️</p>
+  <a href="reel.html" class="story-entry">🎬 Watch as a Story</a>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="carouselTrack"></div>
+  </div>
+  <div class="carousel-dots" id="carouselDots"></div>
+
+  <div class="video-wrap" id="videoWrap" style="margin-top:2rem; text-align:center;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">A LITTLE VIDEO 🎥</p>
+    <video id="ourVideo" controls playsinline style="width:100%; max-width:480px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+      <source src="images/WhatsApp Video 2026-09-24 at 10.35.50 PM.mp4" type="video/mp4">
+    </video>
+    <p class="placeholder-tag" id="videoFallback" style="display:none; margin-top:0.6rem;">video not added yet — drop your file in as videos/our-video.mp4</p>
+  </div>
+
+  <div class="loop-text" id="loopMemories" style="margin-top:2rem;"></div>
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+
+  <a href="birthday.html" data-nav class="btn-glow">ONE LAST SURPRISE →</a>
+
+</main>
+
+<nav class="page-nav">
+  <a href="index.html" data-nav aria-label="Page 1"></a>
+  <a href="story.html" data-nav aria-label="Page 2"></a>
+  <a href="memories.html" data-nav class="active" aria-label="Page 3"></a>
+  <a href="birthday.html" data-nav aria-label="Page 4"></a>
+</nav>
+
+<script src="js/script.js"></script>
+<script>
+  // date: 'YYYY-MM-DD' (or 'YYYY-MM', or any text like 'Winter 2021'). Leave '' to hide the date line.
+const memories = [
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.40 PM.jpeg",
+    cap: "First days...",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.29 PM.jpeg",
+    cap: "BABU 🧿❤️",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM (1).jpeg",
+    cap: "PRECIOUS ❤️",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.03 PM (1).jpeg",
+    cap: "One of those memories ❤️",
+    date: ""
+  },
+  {
+     src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM.jpeg",
+    cap: "Best times",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM (1).jpeg",
+    cap: "Still laughing about this...",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM (2).jpeg",
+    cap: "MOMENTS",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.40 PM.jpeg",
+    cap: "First days...",
+    date: ""
+  },
+  {
+   
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM (2).jpeg",
+    cap: "SMILES💕",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.05 PM (1).jpeg",
+    cap: "That one trip",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.05 PM.jpeg",
+    cap: "Just us being us",
+    date: ""
+  },
+
+  // ⚠️ This was a VIDEO in your old code.
+  // Keep it only if you have converted it to an image.
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.42 PM.jpeg",
+    cap: "Random Tuesday",
+    date: ""
+  },
+
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.27 PM.jpeg",
+    cap: "Too many inside jokes",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM (1).jpeg",
+    cap: "RADIANCE 💫",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM (2).jpeg",
+    cap: "BLOOM 🌷",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM.jpeg",
+    cap: "CURLS 🌀❤️",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.35.29 PM.jpeg",
+    cap: "INNOCENCE 😍",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.43 PM.jpeg",
+    cap: "One of the good days",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM.jpeg",
+    cap: "Unplanned, unforgettable",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.42 PM.jpeg",
+    cap: "Just because",
+    date: ""
+  },
+  {
+    src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM (2).jpeg",
+    cap: "To many more like this ❤️",
+    date: ""
+  },
+   {
+    src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM.jpeg",
+    cap: "Unplanned, unforgettable",
+    date: ""
+  },
+];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Carousel
+    const track = document.getElementById('carouselTrack');
+    const dotsWrap = document.getElementById('carouselDots');
+    memories.forEach((m, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      slide.innerHTML = `
+        <div class="polaroid">
+          <div class="polaroid-photo">
+            <div class="g-fallback-holder" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:2rem;">🖼️</div>
+            <img src="${m.src}" alt="College memory ${i+1}">
+          </div>
+          <div class="polaroid-cap">${m.cap}${m.date ? `<small>${formatMemoryDate(m.date)}</small>` : ''}</div>
+        </div>
+      `;
+      track.appendChild(slide);
+
+      const dot = document.createElement('button');
+      if(i === 0) dot.className = 'active';
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    let idx = 0;
+    const dots = dotsWrap.querySelectorAll('button');
+    function goTo(i){
+      idx = i;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach(d => d.classList.remove('active'));
+      dots[idx].classList.add('active');
+    }
+    setInterval(() => { goTo((idx + 1) % memories.length); }, 3200);
+
+    // Grid
+    const grid = document.getElementById('galleryGrid');
+    memories.forEach((m, i) => {
+      const card = document.createElement('div');
+      card.className = 'polaroid';
+      card.innerHTML = `
+        <div class="polaroid-photo">
+          <div class="g-fallback-holder" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:1.4rem;">🖼️</div>
+          <img src="${m.src}" alt="College memory ${i+1}">
+        </div>
+        <div class="polaroid-cap">${m.cap}${m.date ? `<small>${formatMemoryDate(m.date)}</small>` : ''}</div>
+      `;
+      grid.appendChild(card);
+    });
+
+    attachImageFallback();
+
+    const ourVideo = document.getElementById('ourVideo');
+    ourVideo.addEventListener('error', () => {
+      ourVideo.style.display = 'none';
+      document.getElementById('videoFallback').style.display = 'block';
+    }, true);
+
+    startLoopText(document.getElementById('loopMemories'), [
+      'One college...',
+      'Thousands of moments...',
+      'Countless laughs...',
+      'One unforgettable friendship. ❤️'
+    ], 2400);
+  });
+</script>
+</body>
+</html>

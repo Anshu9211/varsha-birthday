@@ -1,0 +1,1029 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Happy Birthday, Varsha ❤️</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Page transition -->
+  <div id="transition-overlay">
+    <span class="glow-heart">❤</span>
+  </div>
+
+
+  <!-- =========================
+       MAIN PAGE
+  ========================== -->
+
+  <main class="page-wrap" id="page4">
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <div class="dark-stage" id="stageIntro">
+
+      <div>
+
+        <p
+          class="lead-line"
+          id="typeA"
+          style="min-height:5.5em;"
+        ></p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         SECOND MESSAGE
+    ========================== -->
+
+    <div
+      class="dark-stage"
+      id="stageB"
+      style="display:none; min-height:20vh;"
+    >
+
+      <p
+        class="lead-line"
+        id="typeB"
+        style="min-height:2.6em;"
+      ></p>
+
+    </div>
+
+
+    <!-- =========================
+         ROLL NUMBER
+    ========================== -->
+
+    <div
+      class="dark-stage"
+      id="stageRoll"
+      style="display:none; min-height:16vh;"
+    >
+
+      <div class="roll-reveal" id="rollNum">
+        2160870129
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ROLL NUMBER MESSAGE
+    ========================== -->
+
+    <div
+      id="stageC"
+      style="display:none;"
+    >
+
+      <p class="body-text">
+
+        Just a roll number...
+
+        <br>
+        <br>
+
+        But somehow...
+
+        behind that number was the beginning of one of my favorite friendships. ❤️
+
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         BIG BIRTHDAY SECTION
+    ========================== -->
+
+    <div
+      id="stageBig"
+      style="display:none; text-align:center;"
+    >
+
+
+      <!-- =========================
+           SCRATCH CARD
+      ========================== -->
+
+      <div
+        class="scratch-wrap"
+        id="scratchWrap"
+      >
+
+        <h1
+          class="big-headline"
+          id="bigHeadline"
+        >
+
+          🎉 HAPPY BIRTHDAY 🎉
+
+          <span class="name script">
+            VARSHA ❤️
+          </span>
+
+        </h1>
+
+        <canvas
+          class="scratch-canvas"
+          id="scratchCanvas"
+          aria-hidden="true"
+        ></canvas>
+
+      </div>
+
+
+      <!-- Scratch Skip Button -->
+
+      <button
+        class="skip-scratch"
+        id="skipScratch"
+        type="button"
+      >
+        or tap here to reveal
+      </button>
+
+
+      <!-- =========================
+           AFTER SCRATCH
+      ========================== -->
+
+      <div
+        class="after-scratch"
+        id="afterScratch"
+      >
+
+
+        <!-- =========================
+             BIRTHDAY MESSAGE
+        ========================== -->
+
+        <p class="body-text">
+
+          Happy Birthday to one of the most special people I met in college.
+
+        </p>
+
+
+        <p class="body-text">
+
+          Thank you for every laugh,
+          every conversation,
+          every crazy moment,
+          and every memory.
+
+          I'm really glad that our paths crossed. ❤️
+
+        </p>
+
+
+        <!-- =========================
+             ROLL NUMBER CONNECTION
+        ========================== -->
+
+        <p class="roll-bridge">
+
+          From college roll numbers...
+
+          <br>
+
+          <b>2160870131</b>
+          ❤️
+          <b>2160270129</b>
+
+          <br>
+
+          to countless memories...
+
+        </p>
+
+
+        <p class="body-text">
+
+          Here's to many more. 🥂
+
+        </p>
+
+
+        <!-- =========================
+             THINGS I LOVE ABOUT YOU
+        ========================== -->
+
+        <section class="love-section">
+
+          <p class="eyebrow">
+            THINGS I LOVE ABOUT YOU
+          </p>
+
+
+          <div
+            class="love-window"
+            id="loveWindow"
+          >
+
+            <div class="love-scroller">
+
+              <div
+                class="love-track"
+                id="loveTrack"
+              ></div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================
+             PERSONAL NOTE
+        ========================== -->
+
+        <section class="note-wrap">
+
+          <p class="eyebrow">
+            A LITTLE NOTE, JUST FOR YOU
+          </p>
+
+
+          <div
+            class="note-paper"
+            id="notePaper"
+          >
+
+            <p
+              class="note-line"
+              style="--i:0"
+            >
+              Dear Varsha,
+            </p>
+
+
+            <div class="note-gap"></div>
+
+
+            <p
+              class="note-line"
+              style="--i:1"
+            >
+              Some things are easier to write than to say,
+              so here goes.
+            </p>
+
+
+            <p
+              class="note-line"
+              style="--i:2"
+            >
+              Somewhere between the roll numbers and the random
+              conversations, you became one of my favourite people.
+            </p>
+
+
+            <p
+              class="note-line"
+              style="--i:3"
+            >
+              Thank you for the laughs, the chaos,
+              and for being exactly yourself.
+            </p>
+
+
+            <p
+              class="note-line"
+              style="--i:4"
+            >
+              I hope this new year gives you everything
+              you've been quietly wishing for.
+            </p>
+
+
+            <div class="note-gap"></div>
+
+
+            <p
+              class="note-line"
+              style="--i:5"
+            >
+              Happy Birthday, BABU ❤️
+            </p>
+
+
+            <p
+              class="note-line note-sign"
+              style="--i:6"
+            >
+              — Anshu
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================
+             CAKE
+        ========================== -->
+
+        <div class="cake-wrap">
+
+          <div class="cake">
+
+            <div class="candles-row">
+
+              <div class="candle"></div>
+
+              <div class="candle"></div>
+
+              <div class="candle"></div>
+
+            </div>
+
+
+            <div class="cake-tier top"></div>
+
+            <div class="cake-tier bottom"></div>
+
+          </div>
+
+
+          <div class="cake-plate"></div>
+
+        </div>
+
+
+        <!-- =========================
+             FINAL MESSAGE
+        ========================== -->
+
+        <div
+          class="final-lines"
+          style="text-align:center;"
+        >
+
+          <p
+            class="script"
+            style="font-size:1.5rem; color:var(--gold);"
+          >
+            HAPPY BIRTHDAY, VARSHA! 🎂❤️
+          </p>
+
+
+          <p
+            class="body-text"
+            style="margin:0.8rem auto;"
+          >
+
+            Keep smiling.
+
+            <br>
+
+            Keep being crazy.
+
+            <br>
+
+            Keep being YOU.
+
+          </p>
+
+
+          <p class="lead-line">
+
+            And remember...
+
+            <br>
+
+            Our story is still being written. ✨
+
+          </p>
+
+        </div>
+
+
+        <!-- =========================
+             MUSIC + REPLAY
+        ========================== -->
+
+        <div style="text-align:center;">
+
+          <button
+            class="btn-glow music-btn"
+            id="musicBtn"
+          >
+            🎵 PLAY OUR SONG
+          </button>
+
+
+          <br>
+
+
+          <a
+            href="blast.html"
+            class="btn-outline replay-btn"
+            style="display:inline-block;"
+          >
+            💥 100 MEMORIES BLAST
+          </a>
+
+
+          <br>
+
+
+          <a
+            href="index.html"
+            data-nav
+            class="btn-outline replay-btn"
+            style="display:inline-block;"
+          >
+            🔄 REPLAY OUR STORY
+          </a>
+
+        </div>
+
+
+        <!-- =========================
+             AUDIO
+        ========================== -->
+
+        <audio
+          id="bdaySong"
+          src="audio/varsha.mpeg"
+        ></audio>
+
+
+      </div>
+      <!-- /afterScratch -->
+
+
+    </div>
+    <!-- /stageBig -->
+
+
+  </main>
+
+
+  <!-- =========================
+       PAGE NAVIGATION
+  ========================== -->
+
+  <nav class="page-nav">
+
+    <a
+      href="index.html"
+      data-nav
+      aria-label="Page 1"
+    ></a>
+
+
+    <a
+      href="story.html"
+      data-nav
+      aria-label="Page 2"
+    ></a>
+
+
+    <a
+      href="memories.html"
+      data-nav
+      aria-label="Page 3"
+    ></a>
+
+
+    <a
+      href="birthday.html"
+      data-nav
+      class="active"
+      aria-label="Page 4"
+    ></a>
+
+  </nav>
+
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+
+
+  <script>
+
+    // =========================================
+    // THINGS I LOVE ABOUT YOU
+    // =========================================
+
+    const LOVE_ITEMS = [
+
+      'The way your laugh is contagious',
+
+      'Your crazy side that only your people get to see',
+
+      'How you make even boring lectures fun',
+
+      'How much you care, even when you pretend you don\'t',
+
+      'Your smile, the one you can\'t hide',
+
+      'How easy it is to talk to you about anything',
+
+      'Your random thoughts at the most random times',
+
+      'That you\'re always up for a plan (or a bad idea)',
+
+      'That you\'re exactly yourself, always',
+
+      'That you\'re my BABU ❤️'
+
+    ];
+
+
+    // =========================================
+    // DOM READY
+    // =========================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+      const $ = id => document.getElementById(id);
+
+
+      const song = $('bdaySong');
+
+      const musicBtn = $('musicBtn');
+
+
+      let playing = false;
+
+      let revealed = false;
+
+      let scratch = null;
+
+
+      // =========================================
+      // LOVE ITEMS LOOP
+      // =========================================
+
+      const html = LOVE_ITEMS
+        .map(item => {
+
+          return `
+            <div class="love-item">
+              ${item}
+            </div>
+          `;
+
+        })
+        .join('');
+
+
+      // Two copies for seamless animation
+
+      $('loveTrack').innerHTML =
+        html +
+        `
+          <div
+            class="dup"
+            aria-hidden="true"
+          >
+            ${html}
+          </div>
+        `;
+
+
+      // Animation speed
+
+      $('loveTrack').style.setProperty(
+        '--love-dur',
+        (LOVE_ITEMS.length * 3.4) + 's'
+      );
+
+
+      // =========================================
+      // TOUCH PAUSE
+      // =========================================
+
+      const loveWindow = $('loveWindow');
+
+
+      loveWindow.addEventListener(
+        'touchstart',
+        () => {
+
+          loveWindow.classList.add('paused');
+
+        },
+        {
+          passive: true
+        }
+      );
+
+
+      ['touchend', 'touchcancel'].forEach(eventName => {
+
+        loveWindow.addEventListener(
+          eventName,
+          () => {
+
+            loveWindow.classList.remove('paused');
+
+          }
+        );
+
+      });
+
+
+      // =========================================
+      // NOTE SCROLL REVEAL
+      // =========================================
+
+      initScrollReveal(
+        '.note-paper',
+        'show',
+        0.2
+      );
+
+
+      // =========================================
+      // START DIRECTLY
+      // NO TIMER
+      // NO BIRTHDAY LOCK
+      // =========================================
+
+      startSequence();
+
+
+      // =========================================
+      // INTRO SEQUENCE
+      // =========================================
+
+      function startSequence() {
+
+        typeSequence(
+
+          $('typeA'),
+
+          [
+            'Varsha...',
+            'Wait...',
+            "There's something I haven't told you yet..."
+          ],
+
+          {
+
+            speed: 40,
+
+            holdAfter: 1600,
+
+            onDone: () => {
+
+
+              $('stageB').style.display = 'flex';
+
+
+              typeSequence(
+
+                $('typeB'),
+
+                [
+                  'Do you remember where our story started?'
+                ],
+
+                {
+
+                  speed: 40,
+
+                  holdAfter: 1200,
+
+                  onDone: revealRoll
+
+                }
+
+              );
+
+            }
+
+          }
+
+        );
+
+      }
+
+
+      // =========================================
+      // ROLL NUMBER REVEAL
+      // =========================================
+
+      function revealRoll() {
+
+        $('stageRoll').style.display = 'flex';
+
+
+        setTimeout(() => {
+
+          $('rollNum').classList.add('show');
+
+        }, 200);
+
+
+        setTimeout(
+
+          showStageC,
+
+          2200
+
+        );
+
+      }
+
+
+      // =========================================
+      // ROLL NUMBER MESSAGE
+      // =========================================
+
+      function showStageC() {
+
+        const stageC = $('stageC');
+
+
+        stageC.style.display = 'block';
+
+        stageC.style.opacity = '0';
+
+        stageC.style.transition =
+          'opacity 900ms ease';
+
+
+        requestAnimationFrame(() => {
+
+          stageC.style.opacity = '1';
+
+        });
+
+
+        setTimeout(
+
+          showBig,
+
+          2600
+
+        );
+
+      }
+
+
+      // =========================================
+      // BIG BIRTHDAY SECTION
+      // =========================================
+
+      function showBig() {
+
+        const big = $('stageBig');
+
+
+        big.style.display = 'block';
+
+
+        big.scrollIntoView({
+
+          behavior: 'smooth',
+
+          block: 'start'
+
+        });
+
+
+        requestAnimationFrame(() => {
+
+
+          scratch = initScratchCard(
+
+            $('scratchWrap'),
+
+            {
+
+              onReveal
+
+            }
+
+          );
+
+
+        });
+
+
+        // Skip scratch
+
+        $('skipScratch').addEventListener(
+
+          'click',
+
+          () => {
+
+            if (scratch) {
+
+              scratch.reveal();
+
+            }
+
+          }
+
+        );
+
+      }
+
+
+      // =========================================
+      // AFTER SCRATCH REVEAL
+      // =========================================
+
+      function onReveal() {
+
+        revealed = true;
+
+
+        // Hide skip button
+
+        $('skipScratch').style.display = 'none';
+
+
+        // Effects
+
+        launchConfetti();
+
+        startFallingPetals();
+
+        spawnBalloons();
+
+
+        // Show content
+
+        const afterScratch =
+          $('afterScratch');
+
+
+        afterScratch.style.display =
+          'block';
+
+
+        afterScratch.style.opacity =
+          '0';
+
+
+        afterScratch.style.transition =
+          'opacity 900ms ease';
+
+
+        requestAnimationFrame(() => {
+
+          afterScratch.style.opacity =
+            '1';
+
+        });
+
+
+        // =========================================
+        // START MUSIC
+        // =========================================
+
+        song.currentTime = 0;
+
+
+        song
+          .play()
+          .then(() => {
+
+            musicBtn.textContent =
+              '⏸ Pause Music';
+
+            playing = true;
+
+          })
+          .catch(() => {
+
+            // Browser autoplay may block audio.
+            // User can press PLAY OUR SONG.
+
+          });
+
+      }
+
+
+      // =========================================
+      // MUSIC BUTTON
+      // =========================================
+
+      musicBtn.addEventListener(
+
+        'click',
+
+        () => {
+
+
+          if (!playing) {
+
+
+            song.currentTime = 0;
+
+
+            song
+              .play()
+              .catch(() => {});
+
+
+            musicBtn.textContent =
+              '⏸ Pause Music';
+
+
+            playing = true;
+
+
+          } else {
+
+
+            song.pause();
+
+
+            musicBtn.textContent =
+              '🎵 PLAY OUR SONG';
+
+
+            playing = false;
+
+          }
+
+        }
+
+      );
+
+
+      // =========================================
+      // MUSIC ENDED
+      // =========================================
+
+      song.addEventListener(
+
+        'ended',
+
+        () => {
+
+          musicBtn.textContent =
+            '🎵 PLAY OUR SONG';
+
+          playing = false;
+
+        }
+
+      );
+
+
+      // =========================================
+      // PERIODIC CONFETTI
+      // =========================================
+
+      setInterval(
+
+        () => {
+
+          if (revealed) {
+
+            launchConfetti(2200);
+
+            spawnBalloons(2);
+
+          }
+
+        },
+
+        9000
+
+      );
+
+
+    });
+
+  </script>
+
+</body>
+</html>

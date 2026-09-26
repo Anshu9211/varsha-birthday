@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Story — Anshu &amp; Varsha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="transition-overlay"><span class="glow-heart">❤</span></div>
+
+<main class="page-wrap" id="page1">
+
+  <p class="eyebrow">A STORY FOR VARSHA</p>
+
+  <p class="lead-line" id="opener" style="margin-top:1.2rem;">
+    Sometimes the best friendships begin completely unexpectedly...
+  </p>
+
+  <h1 class="page-title" style="margin-top:1.6rem;">It all started at Govt. Degree College, Solan... 🎓</h1>
+
+  <div class="id-card" id="idCard">
+    <div class="id-row">
+      <span class="id-name">ANSHU</span>
+      <span class="id-roll">Roll No. 2160870131</span>
+    </div>
+    <div class="id-plus">+</div>
+    <div class="id-row">
+      <span class="id-name">VARSHA</span>
+      <span class="id-roll">Roll No. 2160270129</span>
+    </div>
+  </div>
+
+  <p class="body-text">
+    Two different roll numbers...<br>
+    One unexpected friendship. ❤️
+  </p>
+
+  <div class="childhood-wrap" id="childhoodWrap" style="margin-top:1.8rem; text-align:center;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">BEFORE ALL OF THIS...</p>
+    <div class="polaroid" style="width:200px; margin:0 auto; --tilt:-2.5deg;">
+      <div class="polaroid-photo">
+        <div class="g-fallback-holder" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;">🧒</div>
+        <img src="images/WhatsApp Image 2026-09-24 at 10.35.27 PM.jpeg" alt="Varsha as a child">
+      </div>
+      <div class="polaroid-cap">little Varsha 🎈</div>
+    </div>
+    <p class="body-text" style="margin-top:1.2rem;">Born 27th October 1999 — long before college, long before any of this. 🎈</p>
+  </div>
+
+  <div class="loop-text" id="loopIntro" style="margin-top:1.6rem;"></div>
+
+  <a href="story.html" data-nav class="btn-glow">FIRST MEETING →</a>
+
+</main>
+
+<nav class="page-nav">
+  <a href="index.html" data-nav class="active" aria-label="Page 1"></a>
+  <a href="story.html" data-nav aria-label="Page 2"></a>
+  <a href="memories.html" data-nav aria-label="Page 3"></a>
+  <a href="birthday.html" data-nav aria-label="Page 4"></a>
+</nav>
+
+<script src="js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    attachImageFallback();
+
+    setTimeout(() => {
+      document.getElementById('idCard').classList.add('reveal');
+    }, 700);
+
+    startLoopText(document.getElementById('loopIntro'), [
+      'Two strangers...',
+      'Same college...',
+      'Different roll numbers...',
+      'One friendship...',
+      'And then came Varsha ❤️'
+    ], 2400);
+  });
+</script>
+</body>
+</html>

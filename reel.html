@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Story — Reel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  html, body{ margin:0; padding:0; background:#000; height:100%; overflow:hidden; }
+</style>
+</head>
+<body>
+
+<div class="story-progress" id="storyProgress"></div>
+<a href="memories.html" class="story-close" aria-label="Close">✕</a>
+<button class="story-mute" id="storyMute" aria-label="Toggle sound">🔇</button>
+
+<div class="story-viewport" id="storyViewport"></div>
+
+<script>
+  // Photos (reused from the memories page) + all 3 videos, interleaved.
+  const photos = [
+    { src: "images/1.jpeg", cap: "" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.40 PM.jpeg", cap: "First days..." },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.29 PM.jpeg", cap: "BABU 🧿❤️" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM (1).jpeg", cap: "PRECIOUS ❤️" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.03 PM (1).jpeg", cap: "One of those memories ❤️" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.03 PM.jpeg", cap: "" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM.jpeg", cap: "Best times" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM (1).jpeg", cap: "Still laughing about this..." },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.04 PM (2).jpeg", cap: "MOMENTS" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM (2).jpeg", cap: "SMILES💕" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.05 PM (1).jpeg", cap: "That one trip" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.05 PM.jpeg", cap: "Just us being us" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.42 PM.jpeg", cap: "Random Tuesday" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.27 PM.jpeg", cap: "Too many inside jokes" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM (1).jpeg", cap: "RADIANCE 💫" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM (2).jpeg", cap: "BLOOM 🌷" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.28 PM.jpeg", cap: "CURLS 🌀❤️" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.35.38 PM.jpeg", cap: "INNOCENCE 😍" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.02 PM.jpeg", cap: "" },
+    { src: "images/WhatsApp Image 2026-09-24 at 10.36.02 PM (1).jpeg", cap: "" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.43 PM.jpeg", cap: "One of the good days" },
+    { src: "images/WhatsApp Image 2026-09-24 at 11.00.41 PM.jpeg", cap: "Unplanned, unforgettable" }
+  ];
+  const videos = [
+    { src: "images/WhatsApp Video 2026-09-24 at 10.35.38 PM.mp4", cap: "" },
+    { src: "images/WhatsApp Video 2026-09-24 at 10.35.50 PM.mp4", cap: "" },
+    { src: "images/WhatsApp Video 2026-09-24 at 10.36.01 PM.mp4", cap: "" }
+  ];
+
+  // Interleave: photo, photo, photo, photo, photo, video, ... spreading videos across the reel
+  const items = [];
+  let vi = 0;
+  photos.forEach((p, i) => {
+    items.push({ type: 'image', ...p });
+    if ((i + 1) % 5 === 0 && vi < videos.length) {
+      items.push({ type: 'video', ...videos[vi] });
+      vi++;
+    }
+  });
+  while (vi < videos.length) { items.push({ type: 'video', ...videos[vi] }); vi++; }
+
+  const viewport = document.getElementById('storyViewport');
+  const progressWrap = document.getElementById('storyProgress');
+
+  items.forEach((item, i) => {
+    const bar = document.createElement('span');
+    bar.dataset.index = i;
+    progressWrap.appendChild(bar);
+
+    const slide = document.createElement('div');
+    slide.className = 'story-slide';
+    slide.dataset.index = i;
+
+    let media;
+    if (item.type === 'video') {
+      media = document.createElement('video');
+      media.src = item.src;
+      media.loop = true;
+      media.muted = true;
+      media.playsInline = true;
+      media.setAttribute('playsinline', '');
+    } else {
+      media = document.createElement('img');
+      media.src = item.src;
+      media.loading = 'lazy';
+      media.alt = item.cap || 'memory';
+    }
+    slide.appendChild(media);
+
+    if (item.cap) {
+      const cap = document.createElement('div');
+      cap.className = 'story-caption';
+      cap.textContent = item.cap;
+      slide.appendChild(cap);
+    }
+    viewport.appendChild(slide);
+  });
+
+  // Final "Thanks for watching" slide
+  {
+    const bar = document.createElement('span');
+    bar.dataset.index = items.length;
+    progressWrap.appendChild(bar);
+
+    const slide = document.createElement('div');
+    slide.className = 'story-slide story-end';
+    slide.dataset.index = items.length;
+    slide.innerHTML = `
+      <div class="story-end-inner">
+        <div class="story-end-heart">❤</div>
+        <h2>Thanks for watching</h2>
+        <p>Every picture, every video... it's all us. 💕</p>
+        <a href="memories.html" class="story-entry">Back to Memories</a>
+      </div>`;
+    viewport.appendChild(slide);
+  }
+
+  // Play/pause videos + light-up progress bars as slides enter view
+  const bars = [...progressWrap.children];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const idx = Number(entry.target.dataset.index);
+      const media = entry.target.querySelector('video, img');
+      if (entry.isIntersecting) {
+        bars[idx].classList.add('seen');
+        if (media && media.tagName === 'VIDEO') { media.currentTime = 0; media.play().catch(()=>{}); }
+      } else {
+        if (media && media.tagName === 'VIDEO') media.pause();
+      }
+    });
+  }, { threshold: 0.6 });
+
+  [...viewport.children].forEach(slide => observer.observe(slide));
+
+  // Global mute toggle
+  const muteBtn = document.getElementById('storyMute');
+  let muted = true;
+  muteBtn.addEventListener('click', () => {
+    muted = !muted;
+    muteBtn.textContent = muted ? '🔇' : '🔊';
+    viewport.querySelectorAll('video').forEach(v => v.muted = muted);
+  });
+
+  // Double-tap / double-click to like — heart burst animation
+  let lastTap = 0;
+  viewport.addEventListener('click', (e) => {
+    const slide = e.target.closest('.story-slide');
+    if (!slide || slide.classList.contains('story-end')) return;
+    const now = Date.now();
+    if (now - lastTap < 350) {
+      const heart = document.createElement('div');
+      heart.className = 'story-heart-burst';
+      heart.textContent = '❤';
+      const rect = slide.getBoundingClientRect();
+      heart.style.left = (e.clientX - rect.left) + 'px';
+      heart.style.top = (e.clientY - rect.top) + 'px';
+      slide.appendChild(heart);
+      setTimeout(() => heart.remove(), 900);
+    }
+    lastTap = now;
+  });
+</script>
+</body>
+</html>
